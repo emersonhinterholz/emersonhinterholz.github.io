@@ -1,7 +1,8 @@
-var gulp = require('gulp');
-var del = require('del');
-var htmlmin = require('gulp-htmlmin');
-var csso = require('gulp-csso');
+const gulp = require('gulp');
+const del = require('del');
+const htmlmin = require('gulp-htmlmin');
+const csso = require('gulp-csso');
+const imagemin = require('gulp-imagemin');
 
 function clean() {
   return del(['./dist']);
@@ -27,4 +28,10 @@ function styles() {
       .pipe(gulp.dest('./dist/css'));
 }
 
-exports.default = gulp.series(clean, templates, styles);
+function images() {
+   return gulp.src(['../../html/img/*'])
+      .pipe(imagemin())
+      .pipe(gulp.dest('./dist/img'));
+}
+
+exports.default = gulp.series(clean, templates, styles, images);
