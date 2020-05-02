@@ -15,6 +15,7 @@ steps:
   inputs:
     version: '12.x'
 - task: Bash@3
+  displayName: Updating GTAG and "updated" meta tag
   inputs:
     targetType: 'inline'
     script: |
@@ -22,6 +23,14 @@ steps:
       cd $(build.sourcesDirectory)/html
       node $(build.sourcesDirectory)/pipeline/replace-gtag.js
       node $(build.sourcesDirectory)/pipeline/replace-updated.js
+- task: Bash@3
+  displayName: Minifying HTML and CSS
+  inputs:
+    targetType: 'inline'
+    script: |
+      npm i html-minifier
+      cd $(build.sourcesDirectory)/html
+      html-minifier --collapse-inline-tag-whitespace --collapse-whitespace --decode-entities --html5 --keep-closing-slash --minify-css true --minify-js true --minify-urls true --remove-comments
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)/html'
