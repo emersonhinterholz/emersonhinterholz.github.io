@@ -1,12 +1,8 @@
 {
-    "name": "local-minifier",
-    "devDependencies": {
-      "del": "*",
-      "gulp": "*",
-      "gulp-csso": "*",
-      "gulp-htmlmin": "*",
-      "gulp-sass": "*",
-      "gulp-uglify": "*",
-      "run-sequence": "*"
-    }
+  "name": "local-minifier",
+  "dependencies": {
+    "async-once": "^1.0.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2"
   }
+}
