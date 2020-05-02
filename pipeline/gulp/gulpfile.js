@@ -1,21 +1,30 @@
 var gulp = require('gulp');
 var del = require('del');
-var once = require('async-once');
+var htmlmin = require('gulp-htmlmin');
+var csso = require('gulp-csso');
 
-gulp.task('clean', once(function(done) {
-  del(['../../dist'], done);
-}));
+function clean() {
+  return del(['./dist']);
+};
 
-gulp.task('templates', gulp.series('clean', function() {
-  return gulp.src(['../../html/*.html'])
-    .pipe(gulp.dest('../../dist'));
-}));
+function templates() {
+   return gulp.src(['../../html/*.html'])
+      .pipe(htmlmin({
+         collapseWhitespace: true,
+         removeComments: true,
+         minifyCSS: true,
+         minifyJS: true,
+         keepClosingSlash: true,
+         html5: true,
+         decodeEntities: true
+      }))
+      .pipe(gulp.dest('./dist'));
+}
 
-gulp.task('styles', gulp.series('clean', function() {
-  return gulp.src(['../../html/css/*.css'])
-    .pipe(gulp.dest('../../dist/css'));
-}));
+function styles() {
+   return gulp.src(['../../html/css/*.css'])
+      .pipe(csso())
+      .pipe(gulp.dest('./dist/css'));
+}
 
-gulp.task('build', gulp.parallel('templates', 'styles'));
-
-gulp.task('default', gulp.parallel('build'));
+exports.default = gulp.series(clean, templates, styles);

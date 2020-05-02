@@ -3,6 +3,8 @@
   "dependencies": {
     "async-once": "^1.0.1",
     "del": "^5.1.0",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1"
   }
 }
