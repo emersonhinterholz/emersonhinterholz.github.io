@@ -28,11 +28,11 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      npm i html-minifier
-      cd $(build.sourcesDirectory)/html
-      html-minifier --collapse-inline-tag-whitespace --collapse-whitespace --decode-entities --html5 --keep-closing-slash --minify-css true --minify-js true --minify-urls true --remove-comments
+      cd $(build.sourcesDirectory)/pipeline/gulp
+      npm i
+      gulp
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)/html'
+    rootFolderOrFile: '$(build.sourcesDirectory)/dist'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
