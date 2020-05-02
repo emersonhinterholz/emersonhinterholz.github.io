@@ -10,6 +10,24 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+- task: UseNode@1
+  inputs:
+    version: '12.x'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'npm i -g replace-in-file'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'node $(build.sourcesDirectory)/pipeline/replace-gtag.js'
+    workingDirectory: '$(build.sourcesDirectory)/html'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'node $(build.sourcesDirectory)/pipeline/replace-updated.js'
+    workingDirectory: '$(build.sourcesDirectory)/html'
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)/html'
