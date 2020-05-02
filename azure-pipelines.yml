@@ -30,7 +30,7 @@ steps:
     script: |
       cd $(build.sourcesDirectory)/pipeline/gulp
       npm i
-      gulp
+      NODE_DEBUG=cluster,net,http,fs,tls,module,timers node gulpfile.js
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)/dist'
