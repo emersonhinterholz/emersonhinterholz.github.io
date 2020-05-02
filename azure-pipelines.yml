@@ -18,7 +18,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      npm i -g replace-in-file
+      npm i replace-in-file
       node $(build.sourcesDirectory)/pipeline/replace-gtag.js
       node $(build.sourcesDirectory)/pipeline/replace-updated.js
 - task: ArchiveFiles@2
