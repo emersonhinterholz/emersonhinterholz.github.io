@@ -17,17 +17,10 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'npm i -g replace-in-file'
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'node $(build.sourcesDirectory)/pipeline/replace-gtag.js'
-    workingDirectory: '$(build.sourcesDirectory)/html'
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'node $(build.sourcesDirectory)/pipeline/replace-updated.js'
-    workingDirectory: '$(build.sourcesDirectory)/html'
+    script: |
+      npm i -g replace-in-file
+      node $(build.sourcesDirectory)/pipeline/replace-gtag.js
+      node $(build.sourcesDirectory)/pipeline/replace-updated.js
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)/html'
