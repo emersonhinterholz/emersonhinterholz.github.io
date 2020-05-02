@@ -4,7 +4,7 @@
 }
 body {
     background: #123;
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
     padding: 0;
 }
 .avatar {
@@ -37,12 +37,25 @@ h2 {
     display: inline-block;
 }
 ul {
+    border-radius: 1rem;
+    box-shadow: 0.25rem 0.25rem #567;
     list-style: none;
-    margin: 1rem 0 0 0;
+    margin: 1rem;
     padding: 0;
 }
 ul li {
     padding: 0.5rem 0;
+    border: 0.065rem solid #eee;
+    border-top: 0;
+    border-bottom: 0;
+}
+ul li:first-child {
+    border-top: 0.065rem solid #eee;
+    border-radius: 1rem 1rem 0 0;
+}
+ul li:last-child {
+    border-bottom: 0.065rem solid #eee;
+    border-radius: 0 0 1rem 1rem;
 }
 ul li:hover {
     background: #234;
@@ -64,9 +77,4 @@ ul span {
     margin-left: 2rem;
     text-align: left;
     width: 10rem;
-}
-hr {
-    border-width: 0.125rem 0 0 0;
-    border-color: #eee;
-    margin: 0;
 }
