@@ -16,7 +16,6 @@ body {
     margin-left: 2rem;
     float: left;
     padding-bottom: 2rem;
-    position: fixed;
 }
 .logo img {
     width: 5rem;
@@ -101,9 +100,10 @@ div.footer {
 div.footer p {
     text-align: center;
 }
-.logo-transparent {
+.logo-transparent-container {
     text-align: center;
 }
-.logo-transparent img {
+.logo-transparent-container img {
+    max-width: 100%;
     width: 30rem;
 }
