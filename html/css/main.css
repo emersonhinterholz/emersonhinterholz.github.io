@@ -3,12 +3,26 @@
     font-family: Raleway, sans-serif;
 }
 body {
-    background: #123;
-    margin: 1rem 0 2rem 0;
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
     padding: 0;
 }
+.logo {
+    border: solid #276955;
+    border-width: 0 0.065rem 0.065rem 0.065rem ;
+    border-radius: 0 0 3rem 3rem;
+    margin-left: 2rem;
+    float: left;
+    padding-bottom: 2rem;
+    position: fixed;
+}
+.logo img {
+    width: 5rem;
+}
 .avatar {
-    border: 0.125rem solid #eee;
+    border: 0.125rem solid #276955;
     border-radius: 50%;
     height: 14rem;
     margin: 2rem auto 0 auto;
@@ -36,35 +50,30 @@ h2 {
 .container-dados div {
     display: inline-block;
 }
+.container-bio {
+    line-height: 2rem;
+    text-align: center;
+}
+.container-bio p {
+    margin: 3rem 1rem;
+}
 ul {
     border-radius: 1rem;
-    box-shadow: 0.25rem 0.25rem #567;
     list-style: none;
     margin: 1rem;
     padding: 0;
 }
 ul li {
     padding: 0.5rem 0;
-    border: 0.065rem solid #eee;
-    border-top: 0;
-    border-bottom: 0;
-}
-ul li:first-child {
-    border-top: 0.065rem solid #eee;
-    border-radius: 1rem 1rem 0 0;
-}
-ul li:last-child {
-    border-bottom: 0.065rem solid #eee;
-    border-radius: 0 0 1rem 1rem;
-}
-ul li:hover {
-    background: #234;
 }
 ul a {
     display: inline-block;
     text-align: center;
     text-decoration: none;
     width: 100%;
+}
+ul li:hover a span {
+    color: #276955;
 }
 ul img {
     height: 4rem;
@@ -77,4 +86,24 @@ ul span {
     margin-left: 2rem;
     text-align: left;
     width: 10rem;
+}
+div.background-transparent {
+    background: transparent;
+    padding: 5rem 0;
+}
+div.background-theme {
+    background: #276955;
+    padding: 5rem 0;
+}
+div.footer {
+    padding: 0;
+}
+div.footer p {
+    text-align: center;
+}
+.logo-transparent {
+    text-align: center;
+}
+.logo-transparent img {
+    width: 30rem;
 }
