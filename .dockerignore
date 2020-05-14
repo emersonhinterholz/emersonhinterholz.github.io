@@ -1,0 +1,6 @@
+.dockerignore
+.gitignore
+pipeline
+azure-pipelines.yml
+*.sh
+Dockerfile
