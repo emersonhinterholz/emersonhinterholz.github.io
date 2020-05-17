@@ -15,7 +15,7 @@ steps:
   inputs:
     version: '12.x'
 - task: Bash@3
-  displayName: Updating GTAG and "updated" meta tag
+  displayName: Updating GTAG, "updated" meta tag and Instrumentation Key
   inputs:
     targetType: 'inline'
     script: |
@@ -23,6 +23,7 @@ steps:
       cd $(build.sourcesDirectory)/html
       node $(build.sourcesDirectory)/pipeline/replace-gtag.js
       node $(build.sourcesDirectory)/pipeline/replace-updated.js
+      node $(build.sourcesDirectory)/pipeline/replace-instrumentation-key.js
 - task: Bash@3
   displayName: Minifying HTML and CSS
   inputs:
