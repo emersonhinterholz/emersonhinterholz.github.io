@@ -24,6 +24,7 @@ steps:
       node $(build.sourcesDirectory)/pipeline/replace-gtag.js
       node $(build.sourcesDirectory)/pipeline/replace-updated.js
       node $(build.sourcesDirectory)/pipeline/replace-instrumentation-key.js
+      node $(build.sourcesDirectory)/pipeline/replace-year.js
 - task: Bash@3
   displayName: Minifying HTML and CSS
   inputs:
