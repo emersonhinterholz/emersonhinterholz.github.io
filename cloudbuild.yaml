@@ -1,0 +1,10 @@
+resources:
+  - name: my-cdn-config
+    type: compute.v1.cdnConfig
+    properties:
+      defaultCachePolicy: CacheAllStatic
+      negativeCaching:
+        enabled: true
+        policy: CacheAllStatic
+
+steps: []

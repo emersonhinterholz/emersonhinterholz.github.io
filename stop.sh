@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "=== Stopping ehint image ==="
+echo "=== Stopping ehint container ==="
 
 docker stop ehint
 
 echo "=== Removing ehint image ==="
 
-docker rm ehint
+docker image rm ehint/nginx
