@@ -4,5 +4,5 @@ steps:
       - storage
       - buckets
       - create
-      - ehint-static-bucket
+      - gs://ehint-static-bucket
       - --location=southamerica-east1
