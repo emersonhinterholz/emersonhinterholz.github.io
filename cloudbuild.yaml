@@ -5,4 +5,4 @@ steps:
       - deployments
       - apply
       - projects/ehintstatic/locations/southamerica-east1/deployments/ehint-static-deployment
-      - --local-source=./deploy/production.yaml
+      - --local-source=deploy/production.yaml
