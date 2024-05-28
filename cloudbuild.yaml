@@ -1,0 +1,6 @@
+steps:
+  - name: 'gcloud storage buckets create'
+    args:
+      - ehint-static-bucket
+      - --location=southamerica-east1
+      - --storage-class=STANDARD
