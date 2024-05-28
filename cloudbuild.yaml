@@ -6,4 +6,3 @@ steps:
       - create
       - ehint-static-bucket
       - --location=southamerica-east1
-      - --storage-class=STANDARD
