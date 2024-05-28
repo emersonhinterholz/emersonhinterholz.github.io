@@ -1,10 +1,5 @@
-resources:
-  - name: my-cdn-config
-    type: compute.v1.cdnConfig
-    properties:
-      defaultCachePolicy: CacheAllStatic
-      negativeCaching:
-        enabled: true
-        policy: CacheAllStatic
-
-steps: []
+steps:
+  - name: "gcr.io/cloud-builders/terraform"
+    args: ["init", "-backend-config=bucket=ehint-static-bucket", '-config-dir=terraform']
+  - name: "gcr.io/cloud-builders/terraform"
+    args: ["apply", "-auto-approve", '-config-dir=terraform']
