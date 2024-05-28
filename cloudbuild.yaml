@@ -6,3 +6,4 @@ steps:
       - create
       - gs://ehint-static-bucket
       - --location=southamerica-east1
+
