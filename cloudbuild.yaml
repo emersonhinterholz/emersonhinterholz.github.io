@@ -1,5 +1,5 @@
 steps:
-  - name: "gcr.io/cloud-builders/terraform"
+  - name: "hashicorp/terraform:1.0."
     args: ["init", "-backend-config=bucket=ehint-static-bucket", '-config-dir=terraform']
-  - name: "gcr.io/cloud-builders/terraform"
+  - name: "hashicorp/terraform:1.0."
     args: ["apply", "-auto-approve", '-config-dir=terraform']
