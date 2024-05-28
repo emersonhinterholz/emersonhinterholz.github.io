@@ -1,6 +1,9 @@
 steps:
-  - name: 'gcloud storage buckets create'
+  - name: 'gcr.io/cloud-builders/gcloud'
     args:
+      - storage
+      - buckets
+      - create
       - ehint-static-bucket
       - --location=southamerica-east1
       - --storage-class=STANDARD
