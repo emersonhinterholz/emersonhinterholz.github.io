@@ -4,5 +4,6 @@ steps:
       - infra-manager
       - deployments
       - apply
-      - --location=ehintStatic
+      - --project=ehintStatic
+      - --location=southamerica-east1
       - --local-source=./deploy/production.yaml
