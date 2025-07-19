@@ -8,6 +8,7 @@
   "devDependencies": {
     "csso-cli": "^4.0.2",
     "html-minifier-terser": "^7.2.0",
+    "replace-in-file": "^8.3.0",
     "rimraf": "^5.0.5",
     "sharp-cli": "^5.2.0"
   },
@@ -16,6 +17,7 @@
     "minify-html": "mkdir -p dist && html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js --keep-closing-slash --decode-entities -o ./dist/index.html ./src/index.html",
     "minify-css": "mkdir -p dist/css && csso ./src/css/main.css --output ./dist/css/main.css",
     "optimize-images": "mkdir -p dist/img && sharp -i ./src/img/* -o ./dist/img --optimize",
-    "build": "npm run clean && npm run minify-html && npm run minify-css && npm run optimize-images"
+    "replace-content": "node ./build-scripts/replace-gtag.js && node ./build-scripts/replace-instrumentation-key.js && node ./build-scripts/replace-updated.js && node ./build-scripts/replace-year.js",
+    "build": "npm run clean && npm run minify-html && npm run minify-css && npm run optimize-images && npm run replace-content"
   }
 }

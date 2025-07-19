@@ -1,8 +1,8 @@
 const replace = require('replace-in-file');
 const options = {
-  files: '*.*',
+  files: './dist/**/*.*',
   from: /%%gtag%%/g,
   to: 'UA-131092739-1',
 };
 
-replace.sync(options);
+replace.replaceInFileSync(options);
