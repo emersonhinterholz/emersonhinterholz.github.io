@@ -6,11 +6,16 @@
     "url": "git+https://github.com/emersonhinterholz/ehint-static.git"
   },
   "devDependencies": {
-    "async-once": "^2.0.0",
-    "del": "^8.0.0",
-    "gulp": "^5.0.1",
-    "gulp-csso": "^4.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^4.1.0"
+    "csso-cli": "^4.0.2",
+    "html-minifier-terser": "^7.2.0",
+    "rimraf": "^5.0.5",
+    "sharp-cli": "^5.2.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "minify-html": "mkdir -p dist && html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js --keep-closing-slash --decode-entities -o ./dist/index.html ./src/index.html",
+    "minify-css": "mkdir -p dist/css && csso ./src/css/main.css --output ./dist/css/main.css",
+    "optimize-images": "mkdir -p dist/img && sharp -i ./src/img/* -o ./dist/img --optimize",
+    "build": "npm run clean && npm run minify-html && npm run minify-css && npm run optimize-images"
   }
 }
