@@ -2,6 +2,6 @@
 
 ./stop.sh
 
-echo "=== Starting ehint from builded image ehint/nginx ==="
+echo "=== Starting ehint from builded image ehint-built ==="
 
-docker run -d -p 80:80 --name ehint ehint/nginx
+docker run -d -p 80:80 --name ehint-built ehint-built

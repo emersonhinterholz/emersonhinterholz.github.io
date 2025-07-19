@@ -2,8 +2,4 @@
 
 echo "=== Stopping ehint container ==="
 
-docker stop ehint
-
-echo "=== Removing ehint image ==="
-
-docker image rm ehint/nginx
+docker stop ehint-runtime

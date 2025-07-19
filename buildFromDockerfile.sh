@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t ehint/nginx . 
+docker build -t ehint-built . 
