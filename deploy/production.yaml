@@ -1,7 +1,0 @@
-resources:
-  - name: ehint-static-bucket
-    type: storage.v1.bucket
-    properties:
-      name: ehint-static-bucket
-      location: southamerica-east1
-      storageClass: standard

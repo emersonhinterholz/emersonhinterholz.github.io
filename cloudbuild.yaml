@@ -1,8 +1,0 @@
-steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-      - infra-manager
-      - deployments
-      - apply
-      - projects/ehintstatic/locations/southamerica-east1/deployments/ehint-static-deployment
-      - --local-source=./deploy/
