@@ -1,0 +1,16 @@
+{
+  "name": "ehint-static",
+  "homepage": "https://github.com/emersonhinterholz/ehint-static#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emersonhinterholz/ehint-static.git"
+  },
+  "devDependencies": {
+    "async-once": "^2.0.0",
+    "del": "^8.0.0",
+    "gulp": "^5.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^4.1.0"
+  }
+}
