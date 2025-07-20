@@ -9,19 +9,9 @@ body {
     margin: 0;
     padding: 0;
 }
-.logo {
-    border: solid #276955;
-    border-width: 0 0.065rem 0.065rem 0.065rem ;
-    border-radius: 0 0 3rem 3rem;
-    margin-left: 2rem;
-    float: left;
-    padding-bottom: 2rem;
-}
-.logo img {
-    width: 5rem;
-}
+
 .avatar {
-    border: 0.125rem solid #276955;
+    border: 0.125rem solid #052b2b;
     border-radius: 50%;
     height: 14rem;
     margin: 2rem auto 0 auto;
@@ -50,6 +40,7 @@ h2 {
     display: inline-block;
 }
 .container-bio {
+    font-size: larger;
     line-height: 2rem;
     text-align: center;
 }
@@ -72,7 +63,7 @@ ul a {
     width: 100%;
 }
 ul li:hover a span {
-    color: #276955;
+    color: #052b2b;
 }
 ul img {
     height: 4rem;
@@ -91,7 +82,7 @@ div.background-transparent {
     padding: 5rem 0;
 }
 div.background-theme {
-    background: #276955;
+    background: #052b2b;
     padding: 5rem 0;
 }
 div.footer {
