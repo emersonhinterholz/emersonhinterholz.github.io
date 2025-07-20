@@ -18,6 +18,10 @@
     "minify-css": "mkdir -p dist/css && csso ./src/css/main.css --output ./dist/css/main.css",
     "optimize-images": "mkdir -p dist/img && sharp -i ./src/img/* -o ./dist/img --optimize",
     "replace-content": "node ./build-scripts/replace-gtag.js && node ./build-scripts/replace-instrumentation-key.js && node ./build-scripts/replace-updated.js && node ./build-scripts/replace-year.js",
-    "build": "npm run clean && npm run minify-html && npm run minify-css && npm run optimize-images && npm run replace-content"
+    "build": "npm run clean && npm run minify-html && npm run minify-css && npm run optimize-images && npm run replace-content",
+    "start": "docker stop ehint-runtime 2>/dev/null || true && docker rm ehint-runtime 2>/dev/null || true && docker run -d -p 80:80 -v $(pwd)/dist:/usr/share/nginx/html:ro -v $(pwd)/conf:/etc/nginx/conf.d:ro --name ehint-runtime nginx",
+    "stop": "docker stop ehint-runtime 2>/dev/null || true && docker rm ehint-runtime 2>/dev/null || true",
+    "start:built": "npm run build && docker stop ehint-built 2>/dev/null || true && docker rm ehint-built 2>/dev/null || true && docker build -t ehint-built . && docker run -d -p 81:80 --name ehint-built ehint-built",
+    "stop:built": "docker stop ehint-built 2>/dev/null || true && docker rm ehint-built 2>/dev/null || true"
   }
 }
