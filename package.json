@@ -17,7 +17,7 @@
     "minify-html": "mkdir -p dist && html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js --keep-closing-slash --decode-entities -o ./dist/index.html ./src/index.html",
     "minify-css": "mkdir -p dist/css && csso ./src/css/main.css --output ./dist/css/main.css",
     "optimize-images": "mkdir -p dist/img && sharp -i ./src/img/* -o ./dist/img --optimize",
-    "replace-content": "node ./build-scripts/replace-gtag.js node ./build-scripts/replace-updated.js && node ./build-scripts/replace-year.js",
+    "replace-content": "node ./build-scripts/replace-updated.js && node ./build-scripts/replace-year.js",
     "build": "npm run clean && npm run minify-html && npm run minify-css && npm run optimize-images && npm run replace-content",
     "start": "docker stop ehint-runtime 2>/dev/null || true && docker rm ehint-runtime 2>/dev/null || true && docker run -d -p 80:80 -v $(pwd)/dist:/usr/share/nginx/html:ro -v $(pwd)/conf:/etc/nginx/conf.d:ro --name ehint-runtime nginx",
     "stop": "docker stop ehint-runtime 2>/dev/null || true && docker rm ehint-runtime 2>/dev/null || true",

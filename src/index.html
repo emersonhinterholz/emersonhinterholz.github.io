@@ -95,13 +95,10 @@
         <p>Emerson Hinterholz @ Brazil, %%year%%</p>
     </div>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%%gtag%%"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', '%%gtag%%');
-    </script>
+    <script
+        defer
+        src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "b5f6227b771e47b4a46ad207a8e872c0"}'></script>
 </body>
 
 </html>
