@@ -1,6 +1,25 @@
+:root {
+    --primary-color: #eee;
+    --accent-color: #052b2b;
+    --font-family: Raleway, sans-serif;
+    --avatar-size: 14rem;
+    --border-radius: 1rem;
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+    --spacing-xlarge: 3rem;
+    --spacing-section: 5rem;
+}
+
 * {
-    color: #eee;
-    font-family: Raleway, sans-serif;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 body {
     background-attachment: fixed;
@@ -10,80 +29,117 @@ body {
     padding: 0;
 }
 
+.skip-link {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    left: -9999px;
+    padding: var(--spacing-small) var(--spacing-medium);
+    position: absolute;
+    text-decoration: none;
+    top: var(--spacing-small);
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    left: var(--spacing-small);
+}
+
 .avatar {
-    border: 0.125rem solid #052b2b;
+    border: 0.125rem solid var(--accent-color);
     border-radius: 50%;
-    height: 14rem;
-    margin: 2rem auto 0 auto;
+    height: var(--avatar-size);
+    margin: var(--spacing-large) auto 0 auto;
     overflow: hidden;
-    width: 14rem;
+    width: var(--avatar-size);
 }
 .avatar img {
     width: 100%;
 }
 h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
     text-align: center;
-    margin: 1rem 0 0.5rem 0;
+    margin: var(--spacing-medium) 0 var(--spacing-small) 0;
 }
 h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: normal;
     text-align: right;
     margin: 0;
 }
 .container-dados {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-large);
 }
 .container-dados div {
     display: inline-block;
 }
 .container-bio {
-    font-size: larger;
-    line-height: 2rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
     text-align: center;
 }
 .container-bio p {
-    margin: 3rem 1rem;
+    margin: var(--spacing-xlarge) var(--spacing-medium);
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 ul {
-    border-radius: 1rem;
+    background: rgb(255,255,255,0.05);
+    border-radius: var(--border-radius);
     list-style: none;
-    margin: 1rem;
+    margin: var(--spacing-medium) auto;
     padding: 0;
+    max-width: 400px;
 }
 ul li {
-    padding: 0.5rem 0;
+    padding: var(--spacing-small) 0;
 }
 ul a {
+    border-radius: var(--spacing-small);
     display: inline-block;
+    padding: var(--spacing-small);
     text-align: center;
     text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-large);
 }
-ul li:hover a span {
-    color: #052b2b;
+ul a:hover,
+ul a:focus {
+    background-color: rgba(238, 238, 238, 0.1);
+    transform: translateY(-2px);
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+ul a:focus {
+    outline: 2px solid var(--primary-color);
+}
+ul li:hover a span,
+ul li:focus-within a span {
+    color: var(--accent-color);
 }
 ul img {
-    height: 4rem;
-    vertical-align: middle;
+    height: 3rem;
+    width: 3rem;
+    flex-shrink: 0;
 }
 ul span {
-    display: inline-block;
-    font-size: 1.2rem;
-    line-height: 4rem;
-    margin-left: 2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     text-align: left;
-    width: 10rem;
+    flex: 1;
 }
 div.background-transparent {
     background: transparent;
-    padding: 5rem 0;
+    padding: var(--spacing-section) var(--spacing-medium);
 }
 div.background-theme {
-    background: #052b2b;
-    padding: 5rem 0;
+    background: var(--accent-color);
+    padding: var(--spacing-section) var(--spacing-medium);
 }
 div.footer {
     padding: 0;
@@ -96,5 +152,32 @@ div.footer p {
 }
 .logo-transparent-container img {
     max-width: 100%;
-    width: 30rem;
+    width: clamp(20rem, 50vw, 30rem);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-section: 3rem;
+    }
+    
+    .container-dados h2 {
+        text-align: center;
+    }
+    
+    ul {
+        margin: var(--spacing-small) auto;
+    }
+    
+    ul a {
+        gap: var(--spacing-small);
+    }
+    
+    ul span {
+        text-align: center;
+    }
+    
+    .background-transparent,
+    .background-theme {
+        padding: var(--spacing-section) var(--spacing-small);
+    }
 }
