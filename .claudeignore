@@ -1,0 +1,252 @@
+# ===== Version Control =====
+**/.git/
+**/.svn/
+**/.hg/
+**/.bzr/
+
+# ===== NODE.JS / JAVASCRIPT =====
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/.pnpm-store/
+**/lerna-debug.log*
+**/.npm
+**/.eslintcache
+**/.stylelintcache
+
+# ===== BUILD / DIST =====
+**/dist/
+**/build/
+**/out/
+**/target/
+**/bin/
+**/obj/
+**/*.min.js
+**/*.min.css
+**/bundle.js
+**/bundle.css
+
+# ===== DEPENDENCIES / PACKAGES =====
+**/vendor/
+**/packages/
+**/bower_components/
+**/jspm_packages/
+
+# ===== PYTHON =====
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/*.so
+**/.Python
+**/env/
+**/venv/
+**/ENV/
+**/env.bak/
+**/venv.bak/
+**/.venv/
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+**/.pytest_cache/
+**/.coverage
+**/htmlcov/
+**/.tox/
+**/.nox/
+
+# ===== JAVA =====
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/*.nar
+**/target/
+**/.gradle/
+**/build/
+**/gradle/
+**/gradlew
+**/gradlew.bat
+
+# ===== .NET =====
+**/bin/
+**/obj/
+**/*.dll
+**/*.exe
+**/*.pdb
+**/packages/
+**/.vs/
+
+# ===== PHP =====
+**/vendor/
+**/composer.phar
+**/.phpunit.result.cache
+
+# ===== RUBY =====
+**/*.gem
+**/*.rbc
+**/.config
+**/coverage/
+**/InstalledFiles
+**/pkg/
+**/spec/reports/
+**/spec/examples.txt
+**/test/tmp/
+**/test/version_tmp/
+**/tmp/
+**/.bundle/
+**/vendor/bundle/
+**/.rvmrc
+
+# ===== LOGS =====
+**/*.log
+**/*.log.*
+**/logs/
+**/log/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# ===== CACHE =====
+**/.cache/
+**/.parcel-cache/
+**/.nuxt/
+**/.next/
+**/.vuepress/dist
+**/.serverless/
+**/.fusebox/
+**/.dynamodb/
+**/.tern-port
+**/.vscode/
+**/.idea/
+**/*.swp
+**/*.swo
+**/*~
+
+# ===== ENVIRONMENT / CONFIGS =====
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+**/.env.*.local
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+
+# ===== TESTS =====
+**/coverage/
+**/.nyc_output/
+**/.coverage
+**/htmlcov/
+**/.pytest_cache/
+**/.tox/
+**/junit.xml
+**/test-results/
+
+# ===== TEMP =====
+**/*.tmp
+**/*.temp
+**/*.bak
+**/*.backup
+**/*.old
+**/*.orig
+**/*~
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini
+
+# ===== DOCKER =====
+**/.dockerignore
+**/Dockerfile*
+**/docker-compose*.yml
+
+# ===== DATABASES =====
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.mdb
+**/*.accdb
+
+# ===== MOBILE =====
+# iOS
+**/*.ipa
+**/*.dSYM.zip
+**/*.dSYM
+**/DerivedData/
+**/*.xcworkspace/
+**/*.xcuserdata/
+
+# Android
+**/*.apk
+**/*.aab
+**/build/
+**/.gradle/
+**/local.properties
+
+# ===== CMS / FRAMEWORKS =====
+# WordPress
+**/wp-config.php
+**/wp-content/uploads/
+**/wp-content/cache/
+
+# Laravel
+**/storage/logs/
+**/storage/framework/cache/
+**/storage/framework/sessions/
+**/storage/framework/views/
+**/bootstrap/cache/
+
+# ===== HUGE FILES =====
+# Adicione extensões de arquivos grandes que não precisam ser analisados
+**/*.zip
+**/*.tar.gz
+**/*.rar
+**/*.7z
+**/*.dmg
+**/*.iso
+**/*.pdf
+**/*.doc
+**/*.docx
+**/*.xls
+**/*.xlsx
+**/*.ppt
+**/*.pptx
+
+# IMAGES
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.gif
+**/*.svg
+**/*.ico
+
+# Videos
+**/*.mp4
+**/*.avi
+**/*.mov
+**/*.wmv
+**/*.flv
+**/*.webm
+
+# Audio
+**/*.mp3
+**/*.wav
+**/*.flac
+**/*.aac
+
+# ===== CUSTOM =====
+# **/data/
+# **/uploads/
+# **/assets/large-files/
+
+# ===== LOCK FILES (REGENERATABLE) =====
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+# Keep bun.lock as it's more essential for Bun
+
+# ===== SUPABASE TEMP/CACHE =====
+**/supabase/.temp/
+**/supabase/.branches/
+**/supabase/*.generated.*
